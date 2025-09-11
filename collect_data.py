@@ -12,7 +12,7 @@ for file in range(class_size):
     
     while True:
         _ , frame = cap.read()
-        cv2.putText(frame , "Başlatmak için q'ya bas" , (100,50) , cv2.FONT_HERSHEY_PLAIN , 1.25 , (0,255,0) , 3)
+        cv2.putText(frame , "Başlatmak için q'ya bas" , (100,50) , cv2.FONT_HERSHEY_PLAIN , 1.25 , (0,0,255) , 3)
         cv2.imshow("frame" , frame)
         
         if cv2.waitKey(25) & 0xFF == ord("q"):

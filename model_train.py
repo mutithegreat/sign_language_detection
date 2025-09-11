@@ -4,11 +4,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-data = pickle.load(open("data.pickle" , "rb"))
-data = np.asarray(data["data"])
-labels = np.asarray(data["labels"])
+data = pickle.load(open("data.pickle", "rb"))
+data_new = np.asarray(data["data"])
+labels_new = np.asarray(data["labels"])
 
-xtrain , xtest , ytrain , ytest = train_test_split(data , labels , test_size=0.2 , shuffle=True , stratify=labels)
+
+xtrain , xtest , ytrain , ytest = train_test_split(data_new , labels_new , test_size=0.2 , shuffle=True , stratify=labels_new)
 
 model = RandomForestClassifier()
 model.fit(xtrain , ytrain)
