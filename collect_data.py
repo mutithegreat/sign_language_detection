@@ -1,14 +1,14 @@
 import os
 import cv2
 
-class_size = 3
+class_size = 26
 data_size = 100
 
 cap = cv2.VideoCapture(0)
 
 for file in range(class_size):
-    if not os.path.exists(os.path.join("/data",str(file))):
-        os.makedirs(os.path.join("/data" , str(file)))
+    if not os.path.exists(os.path.join("data",str(file))):
+        os.makedirs(os.path.join("data" , str(file)))
     
     while True:
         _ , frame = cap.read()
@@ -24,7 +24,7 @@ for file in range(class_size):
         _ , frame = cap.read()
         cv2.imshow("frame",frame)
         cv2.waitKey(25)
-        cv2.imwrite(os.path.join("/data" , str(file) , "{}.jpg".format(counter)) , frame)
+        cv2.imwrite(os.path.join("data" , str(file) , "{}.jpg".format(counter)) , frame)
         counter += 1
 
 cap.release()
